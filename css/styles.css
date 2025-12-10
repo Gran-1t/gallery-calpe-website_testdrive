@@ -11347,3 +11347,46 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 6rem; 
     height: 6rem;
 }
+.collection-modal .carousel {
+
+    overflow: visible; 
+}
+
+
+.collection-modal .carousel-control-prev,
+.collection-modal .carousel-control-next {
+
+    width: 80px; 
+
+    opacity: 1; 
+
+    font-size: 2rem; 
+}
+
+
+.collection-modal .carousel-control-prev {
+    left: -100px; 
+    color: #b58d4f; 
+}
+
+.collection-modal .carousel-control-next {
+    right: -100px;
+    color: #b58d4f; 
+}
+
+
+.collection-modal .carousel-control-prev-icon,
+.collection-modal .carousel-control-next-icon {
+
+    filter: invert(53%) sepia(31%) saturate(579%) hue-rotate(345deg) brightness(85%) contrast(85%); 
+}
+
+
+
+@media (max-width: 992px) {
+    .collection-modal .carousel-control-prev,
+    .collection-modal .carousel-control-next {
+        left: 0;
+        right: 0;
+    }
+}
