@@ -11347,46 +11347,43 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 6rem; 
     height: 6rem;
 }
-.collection-modal .carousel {
-
-    overflow: visible; 
-}
-
-
+/* 1. Скрываем стандартные элементы управления (они мешают) */
 .collection-modal .carousel-control-prev,
 .collection-modal .carousel-control-next {
-
-    width: 80px; 
-
-    opacity: 1; 
-
-    font-size: 2rem; 
+    display: none !important;
 }
 
-
-.collection-modal .carousel-control-prev {
-    left: -100px; 
+/* 2. Стиль для наших новых кастомных кнопок */
+.collection-modal .btn-carousel-custom {
+    /* Удаляем стандартные стили Bootstrap для кнопок-стрелок */
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    
+    /* Применяем золотистый цвет */
     color: #b58d4f; 
+    transition: color 0.2s;
 }
 
-.collection-modal .carousel-control-next {
-    right: -100px;
-    color: #b58d4f; 
+.collection-modal .btn-carousel-custom:hover {
+    color: #a07d47; /* Чуть темнее при наведении */
 }
 
-
-.collection-modal .carousel-control-prev-icon,
-.collection-modal .carousel-control-next-icon {
-
-    filter: invert(53%) sepia(31%) saturate(579%) hue-rotate(345deg) brightness(85%) contrast(85%); 
+/* 3. Стиль для индикаторов (точек/прогресса) */
+.collection-modal .carousel-indicators-custom button {
+    /* Стилизация точек/индикаторов */
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #e0e0e0; /* Серый цвет для неактивных */
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    opacity: 1; /* Чтобы не зависеть от стандартной прозрачности Bootstrap */
 }
 
-
-
-@media (max-width: 992px) {
-    .collection-modal .carousel-control-prev,
-    .collection-modal .carousel-control-next {
-        left: 0;
-        right: 0;
-    }
+/* Стиль для активного (текущего) индикатора */
+.collection-modal .carousel-indicators-custom button.active {
+    background-color: #b58d4f; /* Золотистый цвет для активного */
 }
