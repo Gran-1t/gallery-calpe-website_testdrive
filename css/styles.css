@@ -11347,43 +11347,44 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 6rem; 
     height: 6rem;
 }
-/* 1. Скрываем стандартные элементы управления (они мешают) */
+/* 1. Скрываем стандартные элементы управления, которые могут мешать */
 .collection-modal .carousel-control-prev,
 .collection-modal .carousel-control-next {
     display: none !important;
 }
 
-/* 2. Стиль для наших новых кастомных кнопок */
+/* 2. Стиль для кастомных кнопок-стрелок (Изящный вид) */
 .collection-modal .btn-carousel-custom {
-    /* Удаляем стандартные стили Bootstrap для кнопок-стрелок */
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    
-    /* Применяем золотистый цвет */
+    /* Золотистый цвет для стрелок */
     color: #b58d4f; 
     transition: color 0.2s;
+    opacity: 0.9;
 }
 
 .collection-modal .btn-carousel-custom:hover {
     color: #a07d47; /* Чуть темнее при наведении */
 }
 
-/* 3. Стиль для индикаторов (точек/прогресса) */
+/* 3. Стиль для индикаторов (Аккуратные Рисочки) */
 .collection-modal .carousel-indicators-custom button {
-    /* Стилизация точек/индикаторов */
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: #e0e0e0; /* Серый цвет для неактивных */
+    /* Удаляем стандартный прямоугольник */
+    width: 25px; /* Длина рисочки */
+    height: 3px; /* Высота (толщина) рисочки */
+    margin: 0 4px; /* Воздух между рисочками */
+    
+    background-color: #e0e0e0; /* Светло-серый цвет для неактивных */
     border: none;
-    border-radius: 50%;
+    border-radius: 0; /* Делаем прямоугольник (рисочку) */
     transition: background-color 0.3s;
-    opacity: 1; /* Чтобы не зависеть от стандартной прозрачности Bootstrap */
+    opacity: 0.6; /* Воздушность */
 }
 
-/* Стиль для активного (текущего) индикатора */
+/* Стиль для активной рисочки (золотистый акцент) */
 .collection-modal .carousel-indicators-custom button.active {
-    background-color: #b58d4f; /* Золотистый цвет для активного */
+    background-color: #b58d4f; /* Золотистый цвет для активной */
+    opacity: 1; /* Полная видимость для текущего слайда */
 }
