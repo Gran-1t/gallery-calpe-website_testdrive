@@ -11347,13 +11347,7 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 6rem; 
     height: 6rem;
 }
-/* 1. Скрываем стандартные элементы управления, которые могут мешать */
-.collection-modal .carousel-control-prev,
-.collection-modal .carousel-control-next {
-    display: none !important;
-}
-
-/* 2. Стиль для кастомных кнопок-стрелок (Изящный вид) */
+/* 1. Стили для кастомных кнопок-стрелок (Изящный вид) */
 .collection-modal .btn-carousel-custom {
     background: none;
     border: none;
@@ -11369,22 +11363,33 @@ section#contact form#contactForm :-ms-input-placeholder {
     color: #a07d47; /* Чуть темнее при наведении */
 }
 
-/* 3. Стиль для индикаторов (Аккуратные Рисочки) */
-.collection-modal .carousel-indicators-custom button {
+/* 2. Стили для стандартного класса индикаторов, чтобы они выглядели как рисочки */
+.collection-modal .carousel-indicators {
+    /* Важно: удаляем стандартный отступ, чтобы индикаторы стояли ровно в ряд */
+    position: static;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Стиль для самих кнопок-рисочек */
+.collection-modal .carousel-indicators button {
     /* Удаляем стандартный прямоугольник */
-    width: 25px; /* Длина рисочки */
-    height: 3px; /* Высота (толщина) рисочки */
+    width: 20px; /* Длина рисочки */
+    height: 2px; /* Высота (толщина) рисочки */
     margin: 0 4px; /* Воздух между рисочками */
+    
+    /* Делаем их аккуратными и воздушными */
+    text-indent: 0; 
     
     background-color: #e0e0e0; /* Светло-серый цвет для неактивных */
     border: none;
     border-radius: 0; /* Делаем прямоугольник (рисочку) */
-    transition: background-color 0.3s;
-    opacity: 0.6; /* Воздушность */
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 0.5; /* Воздушность */
 }
 
 /* Стиль для активной рисочки (золотистый акцент) */
-.collection-modal .carousel-indicators-custom button.active {
+.collection-modal .carousel-indicators button.active {
     background-color: #b58d4f; /* Золотистый цвет для активной */
     opacity: 1; /* Полная видимость для текущего слайда */
 }
